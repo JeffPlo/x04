@@ -51,9 +51,7 @@ $short_lang = $short_lang[0];
                 <div class="column">
 
                     <div class="top-bar-title">
-
                         <?php echo get_template_part( 'partials/main', 'logo' ); ?>
-
                     </div>
 
                     <div class="top-bar-left">

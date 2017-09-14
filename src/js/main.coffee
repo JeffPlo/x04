@@ -67,8 +67,8 @@ jQuery ($) ->
       $('html,body').animate {scrollTop: targetOffset}, 1000
 
   setCustomSliderImage = ->
-    $('.custom-slider-image').html $('.vc_active .flex-active-slide img')
-      .clone()
+    image = $('.vc_active .flex-active-slide img').clone()
+    $('.custom-slider-image').html( image )
 
 
   init()
