@@ -58,14 +58,13 @@ jQuery ($) ->
     $('#responsive-menu').toggleClass('active')
 
   pageScroll = (event) ->
-    event.preventDefault()
-    #anchor = $(@).parent().attr('id').replace( 'page-item-', '')
-    #target = $('.page-anchor-' + anchor)
+    anchor = $(@).find( 'span' ).text()
+    target = $('.page-anchor-' + anchor)
 
-    console.log( $(@).parent().attr('class') )
-    #if target.length > 0
-    #  targetOffset = target.offset().top
-    #  $('html,body').animate {scrollTop: targetOffset}, 1000
+    if target.length > 0
+      event.preventDefault()
+      targetOffset = target.offset().top
+      $('html,body').animate {scrollTop: targetOffset}, 1000
 
   setCustomSliderImage = ->
     $('.custom-slider-image').html $('.vc_active .flex-active-slide img')
