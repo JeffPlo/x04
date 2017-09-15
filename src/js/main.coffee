@@ -25,6 +25,7 @@ jQuery ($) ->
   ###
   init = ->
     $document.foundation()
+    scrollToPage()
     return
 
   ###
@@ -58,17 +59,29 @@ jQuery ($) ->
     $('#responsive-menu').toggleClass('active')
 
   pageScroll = (event) ->
-    anchor = $(@).find( 'span' ).text()
-    target = $('.page-anchor-' + anchor)
+    pageId = $(@).data( 'page-id' )
+    target = $('.page-anchor-' + pageId)
 
     if target.length > 0
       event.preventDefault()
       targetOffset = target.offset().top
       $('html,body').animate {scrollTop: targetOffset}, 1000
 
+  scrollToPage = ->
+    url = $(location).attr 'href'
+
+    $( '.page-scroll.menu-item a').each ->
+      element = $( this)
+      menuUrl = element.attr 'href'
+
+      if url == menuUrl
+        setTimeout ->
+          element.trigger 'click'
+        , 1000
+
   setCustomSliderImage = ->
-    image = $('.vc_active .flex-active-slide img').clone()
-    $('.custom-slider-image').html( image )
+    image = $('.vc_active .flex-active-slide img')
+    $('.custom-slider-image').html image.clone()
 
 
   init()

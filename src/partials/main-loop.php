@@ -18,7 +18,7 @@
 
 			if ( !empty( $pages ) ) {
 				foreach ( $pages as $page ) {
-					echo '<div class="page-anchor-' . $page->post_title . '"></div>';
+					echo '<div class="page-anchor-' . $page->ID . '"></div>';
 					echo do_shortcode( $page->post_content );
 				}
 			}
