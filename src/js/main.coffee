@@ -64,6 +64,9 @@ jQuery ($) ->
 
     if target.length > 0
       event.preventDefault()
+      hamburgerMenu = $('.responsive-menu-toggle')
+      if hamburgerMenu.hasClass 'active'
+        hamburgerMenu.find('button').trigger 'click'
       targetOffset = target.offset().top
       $('html,body').animate {scrollTop: targetOffset}, 1000
 
