@@ -62,13 +62,20 @@ $short_lang = $short_lang[0];
                             class="top-bar-right responsive-menu"
                             role="navigation">
                         <?php
-                        echo wp_nav_menu(
+                        wp_nav_menu(
+                            array(
+                                'container' => 'ul',
+                                'theme_location' => 'footer-menu',
+                                'link_before' => '<span>',
+                                'link_after' => '</span>'
+                            )
+                        );
+                        wp_nav_menu(
                             array(
                                 'container' => 'ul',
                                 'theme_location' => 'header-menu',
                                 'link_before' => '<span>',
-                                'link_after' => '</span>',
-                                'echo' => false,
+                                'link_after' => '</span>'
                             )
                         );
                         ?>

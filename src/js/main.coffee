@@ -39,7 +39,7 @@ jQuery ($) ->
     $document.on 'toggled.zf.responsiveToggle', '.responsive-menu-toggle',
         toggleBodyScrollBar
     $document.on 'click', '.page-scroll a', pageScroll
-    $document.on 'click', '.vc_tta-tab a, .flex-control-nav a',
+    $document.on 'click', '.no-touch .vc_tta-tab a, .no-touch .flex-control-nav a',
         setCustomSliderImage
     return
 
@@ -83,7 +83,7 @@ jQuery ($) ->
         , 1000
 
   setCustomSliderImage = ->
-    image = $('.vc_active .flex-active-slide img')
+    image = $('.vc_active .flex-active-slide > img')
     $('.custom-slider-image').html image.clone()
 
 
